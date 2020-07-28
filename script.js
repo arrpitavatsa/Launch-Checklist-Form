@@ -1,6 +1,4 @@
 // Write your JavaScript code here!
-
-// Write your JavaScript code here!
 window.addEventListener("load",function(){
  
    let pilotNameInput = document.querySelector("input[name=pilotName]");
@@ -82,6 +80,9 @@ else  {
    pilotStatus.innerHTML = `Pilot ${pilotNameInput.value} is ready for launch.`;
    copilotStatus.innerHTML = `Co-pilot ${copilotNameInput.value} is ready for launch.`;
    event.preventDefault();
+   fuelStatusMessage.innerHTML =`Fuel level high enough for launch`
+   cargoMassStatus.innerHTML = `Cargo mass low enough for launch.`
+   event.preventDefault(); 
 };
 });
 
