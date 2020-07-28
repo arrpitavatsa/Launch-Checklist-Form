@@ -41,6 +41,20 @@ window.addEventListener("load",function(){
       alert("Make sure to enter valid information for each field !");
       event.preventDefault();
    }
+
+   else if (Number(fuelLevelInput.value)<10000 || Number(cargoMassInput.value)>10000){
+
+      faultyItems.style.visibility = `visible`;
+      launchStatusMessage.innerHTML = `Shuttle not ready for launch.`;
+      launchStatusMessage.style.color ="red";
+      pilotStatus.innerHTML = `Pilot ${pilotNameInput.value} is ready for launch.`;
+      copilotStatus.innerHTML = `Co-pilot ${copilotNameInput.value} is ready for launch.`;
+      fuelStatusMessage.innerHTML = `There is not enough fuel for the journey.`;
+      cargoMassStatus.innerHTML = `There is too much mass for the shuttle to take off.`;
+      event.preventDefault();
+   
+   }
+   
    else if (Number(fuelLevelInput.value)<10000){
       faultyItems.style.visibility = `visible`;
       launchStatusMessage.innerHTML = `Shuttle not ready for launch.`;
@@ -60,18 +74,7 @@ else if (Number(cargoMassInput.value)>10000){
    cargoMassStatus.innerHTML = `There is too much mass for the shuttle to take off.`;
    event.preventDefault();
 }
-else if (Number(fuelLevelInput.value)<10000 || Number(cargoMassInput.value)>10000){
 
-   faultyItems.style.visibility = `visible`;
-   launchStatusMessage.innerHTML = `Shuttle not ready for launch.`;
-   launchStatusMessage.style.color ="red";
-   pilotStatus.innerHTML = `Pilot ${pilotNameInput.value} is ready for launch.`;
-   copilotStatus.innerHTML = `Co-pilot ${copilotNameInput.value} is ready for launch.`;
-   fuelStatusMessage.innerHTML = `There is not enough fuel for the journey.`;
-   cargoMassStatus.innerHTML = `There is too much mass for the shuttle to take off.`;
-   event.preventDefault();
-
-}
 
 else  {
    faultyItems.style.visibility = `visible`;
